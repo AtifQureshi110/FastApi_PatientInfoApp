@@ -1,0 +1,14 @@
+{
+    "builds": [
+        {
+            "src": "PatientInfoApp/main.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "PatientInfoApp/main.py"
+        }
+    ]
+}

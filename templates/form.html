@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Patient Form</title>
+        <link rel="stylesheet" href="/static/css/style.css?v=1">
+        <link rel="stylesheet" href="/static/css/shared.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-right">
+        <a href="/">Home</a>
+        <a href="/form">Form</a>
+        <a href="/update">Update</a>
+    </div>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="form-container">
+            <h2>Add Patient</h2>
+            <form method="post" action="/submit">
+                <div class="form-group">
+                    <label id="lb">Patient Id:</label>
+                    <input type="text" name="id" value="P001" required/>
+                </div>
+                <div class="form-group">
+                    <label id="lb">Name:</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label id="lb">Age:</label>
+                    <input type="number" name="age" required>
+                </div>
+                <div class="form-group">
+                    <label id="lb">Weight:</label>
+                    <input type="number" name="weight" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label id="lb">Married:</label>
+                    <input type="checkbox" name="married">
+                </div>
+                <div class="form-group">
+                    <label id="lb">Allergies:</label>
+                    <input type="text" name="allergies" required placeholder='["pollen", "dust"] or pollen,dust'>
+                </div>
+                <div class="form-group">
+                    <label id="lb">Contact Details:</label>
+                    <input type="text" name="contact_details" required>
+                </div>
+                <div class="form-group">
+                    <label id="lb">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label id="lb">LinkedIn URL:</label>
+                    <input type="text" name="linkedin_url" required>
+                </div>
+                <div class="form-group">
+                    <label id="lb">Height:</label>
+                    <input type="number" name="height" step="any" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            {% if message %}
+            <div class="response-message">
+                <p>{{ message }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
